@@ -1,0 +1,800 @@
+{
+	"version": "0.0.1",
+	"domains": [
+		{
+			"@type": "domain",
+			"name": "places",
+			"intents": [
+				{
+					"@type": "intent",
+					"name": "GetCurrentLocation",
+					"examples": [
+						"what is this place?"
+					]
+				},
+				{
+					"@type": "intent",
+					"name": "ShareCurrentLocation",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "contactDescription",
+							"optional": false,
+							"examples": [
+								"send my current location to _David_"
+							],
+							"questions_for_tagging": "Select the words that describe the person with whom the user would like to share their current location.",
+							"valueType": "contactDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "sharingDuration",
+							"optional": true,
+							"examples": [
+								"share my current location with David for _15 minutes_"
+							],
+							"questions_for_tagging": "Select the words, if any, that correspond to how long the user would like to share their current location.",
+							"valueType": "sharingDuration"
+						}
+					]
+				},
+				{
+					"@type": "intent",
+					"name": "ComparePlaces",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "placeName1",
+							"optional": false,
+							"examples": [
+								"what’s the best restaurant between _happy noodles_ and pates vivantes?"
+							],
+							"questions_for_tagging": "Select the words that correspond to the first place mentioned by the user.",
+							"valueType": "placeName"
+						},
+						{
+							"type": "@slot",
+							"name": "placeName2",
+							"optional": false,
+							"examples": [
+								"what’s the best restaurant between happy noodles and _pates vivantes_?"
+							],
+							"questions_for_tagging": "Select the words, that correspond to the second place mentioned by the user.",
+							"valueType": "placeName"
+						},
+						{
+							"type": "@slot",
+							"name": "cheapest",
+							"optional": true,
+							"examples": [
+								"which is the cheapest restaurant between happy noodles and pates vivantes?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the cheapest place.",
+								"no": "The user is interested in the most high-end place.",
+								"default": "The user does not mention a price criterion."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "best",
+							"optional": true,
+							"examples": [
+								"which is the best restaurant between happy noodles and pates vivantes?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in finding the best place, according to a criterion that is not price or distance.",
+								"no": null,
+								"default": "The comparison is not based on a quality criterion."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "closest",
+							"optional": true,
+							"examples": [
+								"which is the closest restaurant between happy noodles and pates vivantes?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the closest place.",
+								"no": null,
+								"default": "The comparison is based on a different criterion."
+							},
+							"valueType": "boolean"
+						}
+					]
+				},
+				{
+					"@type": "intent",
+					"name": "GetPlaceDetails",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "placeName",
+							"optional": false,
+							"examples": [
+								"does _Hotel Costes_ serve vegetarian food?"
+							],
+							"questions_for_tagging": "Select the words that correspond to the name of the place that the user is interested in",
+							"valueType": "placeName"
+						},
+						{
+							"type": "@slot",
+							"name": "photos",
+							"optional": true,
+							"examples": [
+								"can I see pictures of Hotel Costes?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in seeing pictures of a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in seeing pictures of a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "events",
+							"optional": true,
+							"examples": [
+								"what events are scheduled today at Hotel Costes ?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the events scheduled at a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the events scheduled at a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "openingHours",
+							"optional": true,
+							"examples": [
+								"what are Hotel Costes’ opening hours?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the opening hours of a place",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the opening hours of a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "popularHours",
+							"optional": true,
+							"examples": [
+								"what are Hotel Costes’ popular hours?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the popular hours of a place",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the popular hours of a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "menu",
+							"optional": true,
+							"examples": [
+								"can I see Le Camion Qui Fume’s menu?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the menu of a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the menu of a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "tips",
+							"optional": true,
+							"examples": [
+								"what are some tips concerning l’Orangerie?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in tips concerning a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in tips concerning a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "hereNow",
+							"optional": true,
+							"examples": [
+								"how crowded is Hotel Costes right now?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in knowing how crowded the place is.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in knowing how crowded the place is."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "specificItemSold",
+							"optional": true,
+							"examples": [
+								"does Hotel Costes serve vegetarian food?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in a given item sold or served at a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in a given item sold or served at a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "cost",
+							"optional": true,
+							"examples": [
+								"How expensive is Hotel Costes?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the price range of a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the price range of a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "location",
+							"optional": true,
+							"examples": [
+								"where is Hotel Costes located?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the location of a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the location of a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "buyTickets",
+							"optional": true,
+							"examples": [
+								"Where can I get tickets to l’Orangerie?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in buying tickets to a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in buying tickets to a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "parking",
+							"optional": true,
+							"examples": [
+								"does Hotel Costes have a parking?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in parking opportunities around a given place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in parking opportunities."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "forChildren",
+							"optional": true,
+							"examples": [
+								"Is Hotel Costes suitable for children?",
+								"Are there activities for children?"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in knowing if a place is suitable for children.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in knowing if a place is suitable for children."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "contactDetails",
+							"optional": true,
+							"examples": [
+								"how can I contact Hotel Costes?"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the contact details of a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the contact details of a place."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "wifi",
+							"optional": true,
+							"examples": [
+								"does Hotel Costes have wifi?"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in knowing whether a place has Wi-Fi.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in knowing whether a place has Wi-Fi."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "payByCard",
+							"optional": true,
+							"examples": [
+								"Does Hotel Costes accept credit/debit cards?"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in knowing whether a place accepts credit/debit cards.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in knowing whether a place accepts credit/debit cards."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "distance",
+							"optional": true,
+							"examples": [
+								"how far is Hotel Costes?"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in the distance to a place.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in the distance to a place."
+							},
+							"valueType": "boolean"
+						}
+					]
+				},
+				{
+					"@type": "intent",
+					"name": "SearchPlace",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "venueLocation",
+							"optional": true,
+							"examples": [
+								"Find me the cheapest seafood restaurant _near Bastille_"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the location in which a user is looking for a place.",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "venueType",
+							"optional": true,
+							"examples": [
+								"Find me a _seafood restaurant_ near Bastille"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the type of venue the user is looking for.",
+							"valueType": "venueType"
+						},
+						{
+							"type": "@slot",
+							"name": "specificItemSold",
+							"optional": true,
+							"examples": [
+								"Find me a restaurant that serves _burgers_"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the specific item served or sold that the user is looking for.",
+							"valueType": "specificItemSold"
+						},
+						{
+							"type": "@slot",
+							"name": "chain",
+							"optional": true,
+							"examples": [
+								"find me the closest Taco Bell"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is looking for a given chain.",
+								"no": null,
+								"default": "The user does not demonstrate specific interest in finding an establishment from a given chain."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "best",
+							"optional": true,
+							"examples": [
+								"Find me the best Lebanese restaurant around"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested only in the best place, according to a quality criterion that is not price or distance.",
+								"no": null,
+								"default": "The user is not making a search based on a quality criterion."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "cheapest",
+							"optional": true,
+							"examples": [
+								"Find me the cheapest Lebanese restaurant around."	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested only in the cheapest place(s).",
+								"no": "The user is interested only in high-end places.",
+								"default": "The user does not mention a price criterion."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "closest",
+							"optional": true,
+							"examples": [
+								"Find me the closest Lebanese restaurant around"	
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested only in the closest place(s).",
+								"no": null,
+								"default": "The user does not mention a distance criterion."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "topN",
+							"optional": true,
+							"examples": [
+								"Find me the _5_ best Lebanese restaurants around"	
+							],
+							"questions_for_tagging": "Select the words, if any, that correspond to the number of places requested by the user.",
+							"valueType": "topN"
+						},
+						{
+							"type": "@slot",
+							"name": "similarTo",
+							"optional": true,
+							"examples": [
+								"Is there a place similar to Chez Jo near Bastille?"	
+							],
+							"questions_for_tagging": "Select the words, if any, that correspond to a place similar to the one that the user is looking for.",
+							"valueType": "placeName"
+						}
+					]
+				}
+			]
+		},
+		{
+			"@type": "domain",
+			"name": "reservation",
+			"intents": [
+				{
+					"@type": "intent",
+					"name": "BookRestaurant",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "partySize",
+							"optional": false,
+							"examples": [
+								"Get me a table at Le Gavroche for _4_"
+							],
+							"questions_for_tagging": "Select the words that correspond to the number of guests for whom the user would like to make a reservation.",
+							"valueType": "partySize"
+						},
+						{
+							"type": "@slot",
+							"name": "reservationTime",
+							"optional": false,
+							"examples": [
+								"Get me a table at _8PM_ at Le Gavroche"
+							],
+							"questions_for_tagging": "Select the words that correspond to the time and/or date at which the user is looking to make a reservation.",
+							"valueType": "datetimeDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "restaurantDescription",
+							"optional": false,
+							"examples": [
+								"Get me a table at 8PM at _Le Gavroche_.",
+								"Book me a table for 4 at a _Japanese restaurant_"
+							],
+							"questions_for_tagging": "Select the words that describe the restaurant that the user would like to book.",
+							"valueType": "restaurantDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "restaurantLocation",
+							"optional": true,
+							"examples": [
+								"make a reservation for 2 at a Spanish restaurant _near Bastille_"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the location of the restaurant that the user would like to book.",
+							"valueType": "locationDescription"
+						}
+					]
+				},
+				{
+					"@type": "intent",
+					"name": "RequestRide",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "rideOptionName",
+							"optional": true,
+							"examples": [
+								"book me an _Uber_ to Rand’s"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the service from which a user would like to request a trip.",
+							"valueType": "rideOptionName"
+						},
+						{
+							"type": "@slot",
+							"name": "pickupLocation",
+							"optional": true,
+							"examples": [
+								"Can I get a taxi from _home_ to work?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the user's pickup location.",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "dropOffLocation",
+							"optional": true,
+							"examples": [
+								"Can I get a taxi from home to _work_?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the user's destination",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "partySize",
+							"optional": true,
+							"examples": [
+								"Get me an Uber home for _2_"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the number of passengers on the trip.",
+							"valueType": "partySize"
+						},
+						{
+							"type": "@slot",
+							"name": "pickupDatetime",
+							"optional": true,
+							"examples": [
+								"Book me a cab for _tomorrow at 8_"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the time and/or date for which the user is looking to request a ride.",
+							"valueType": "datetimeDescription"
+						}
+					]
+				}
+			]
+		},
+		{
+			"@type": "domain",
+			"name": "transit",
+			"intents": [
+				{
+					"@type": "intent",
+					"name": "GetDirections",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "originName",
+							"optional": true,
+							"examples": [
+								"How do I get from _work_ to République?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the origin of the trip.",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "destinationName",
+							"optional": false,
+							"examples": [
+								"Get me driving directions to _Le Gavroche_"
+							],
+							"questions_for_tagging": "Select the words that describe the destination of the trip.",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "transportMode",
+							"optional": true,
+							"examples": [
+								"how do I go home by _bus_?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the transport mode that the user plans to use for their trip.",
+							"valueType": "transportMode"
+						},
+						{
+							"type": "@slot",
+							"name": "departureDatetime",
+							"optional": true,
+							"examples": [
+								"how do I get to Orly airport _tomorrow at 8pm_?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the time and/or date on which the user is looking to make their trip.",
+							"valueType": "datetimeDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "shortest",
+							"optional": true,
+							"examples": [
+								"what’s the shortest route to Chez Marcel?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested only in the shortest route.",
+								"no": null,
+								"default": "The user is also interested in routes other than the shortest."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "fastest",
+							"optional": true,
+							"examples": [
+								"what’s the fastest way to Le Camion qui fume?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested only in the fastest route.",
+								"no": null,
+								"default": "The user is also interested in routes other than the fastest."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "freeway",
+							"optional": true,
+							"examples": [
+								"how do I get to CDG avoiding the highway? => freeway = false"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in taking the highway.",
+								"no": "The user is interested in avoiding the highway.",
+								"default": "None of the above."
+							},
+							"valueType": "boolean"
+						},
+						{
+							"type": "@slot",
+							"name": "lightTraffic",
+							"optional": true,
+							"examples": [
+								"how do I get to CDG avoiding traffic?"
+							],
+							"questions_for_tagging": { 
+								"yes": "The user is interested in avoiding traffic.",
+								"no": null,
+								"default": "The user does not demonstrate any interest in avoiding traffic."
+							},
+							"valueType": "boolean"
+						}
+					]
+				},
+				{
+					"@type": "intent",
+					"name": "ShareETA",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "contactDescription",
+							"optional": false,
+							"examples": [
+								"send my ETA to _Charlotte_"
+							],
+							"questions_for_tagging": "Select the words that describe the person with whom the user would like to share their estimated time of arrival.",
+							"valueType": "contactDescription"
+						}
+					]
+				},
+				{
+					"@type": "intent",
+					"name": "GetTrafficInformation",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "destinationDescription",
+							"optional": true,
+							"examples": [
+								"should I expect any delay on my way to _Snips_?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the destination of the trip that the user is enquiring about.",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "originDescription",
+							"optional": true,
+							"examples": [
+								"should I expect any delay on my way from _home_ to Snips?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the origin of the trip that the user is enquiring about.",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "wayDescription",
+							"optional": true,
+							"examples": [
+								"What’s the traffic like on _Highway 66_?"
+							],
+							"questions_for_tagging": "Select the words, if any, that describe the specific way or area that the user is enquiring about.",
+							"valueType": "wayDescription"
+						}
+					]
+				}
+			]
+		},
+		{
+			"@type": "domain",
+			"name": "weather",
+			"intents": [
+				{
+					"@type": "intent",
+					"name": "GetWeather",
+					"slots": [
+						{
+							"type": "@slot",
+							"name": "beginTime",
+							"optional": true,
+							"examples": [
+								"what’s the weather like _tomorrow_"
+							],
+							"questions_for_tagging": "Select the words, if any, that correspond to the beginning of the time period about which the user is enquiring.",
+							"valueType": "datetimeDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "endTime",
+							"optional": true,
+							"examples": [
+								"give me the weather forecast between Monday and _Thursday_"
+							],
+							"questions_for_tagging": "Select the words, if any, that correspond to the end of the time period about which the user is enquiring.",
+							"valueType": "datetimeDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "timeDescription",
+							"optional": true,
+							"examples": [
+								"how’s the weather in Rome _between Monday and Friday_"
+							],
+							"questions_for_tagging": "Select the words, if any, that correspond to the time period about which the user is enquiring.",
+							"valueType": "locationDescription"
+						},
+						{
+							"type": "@slot",
+							"name": "locationDescription",
+							"optional": true,
+							"examples": [
+								"how’s the weather in _Rome_"
+							],
+							"questions_for_tagging": "Select the words, if any, that correspond to the location about which the user is enquiring.",
+							"valueType": "locationDescription"
+						}
+					]
+				}
+			]
+		}
+	]
+}
