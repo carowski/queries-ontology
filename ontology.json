@@ -23,7 +23,7 @@
 							"examples": [
 								"send my current location to _David_"
 							],
-							"questions_for_tagging": "Select the words that describe the person with whom the user would like to share their current location.",
+							"questions_for_tagging": "Highlight the words that describe the person with whom the user would like to share their current location.",
 							"valueType": "contactDescription"
 						},
 						{
@@ -33,7 +33,7 @@
 							"examples": [
 								"share my current location with David for _15 minutes_"
 							],
-							"questions_for_tagging": "Select the words, if any, that correspond to how long the user would like to share their current location.",
+							"questions_for_tagging": "Highlight the words, if any, that correspond to how long the user would like to share their current location.",
 							"valueType": "sharingDuration"
 						}
 					]
@@ -49,7 +49,7 @@
 							"examples": [
 								"what’s the best restaurant between _happy noodles_ and pates vivantes?"
 							],
-							"questions_for_tagging": "Select the words that correspond to the first place mentioned by the user.",
+							"questions_for_tagging": "Highlight the words that correspond to the first place mentioned by the user.",
 							"valueType": "placeName"
 						},
 						{
@@ -59,7 +59,7 @@
 							"examples": [
 								"what’s the best restaurant between happy noodles and _pates vivantes_?"
 							],
-							"questions_for_tagging": "Select the words, that correspond to the second place mentioned by the user.",
+							"questions_for_tagging": "Highlight the words, that correspond to the second place mentioned by the user.",
 							"valueType": "placeName"
 						},
 						{
@@ -117,7 +117,7 @@
 							"examples": [
 								"does _Hotel Costes_ serve vegetarian food?"
 							],
-							"questions_for_tagging": "Select the words that correspond to the name of the place that the user is interested in",
+							"questions_for_tagging": "Highlight the words that correspond to the name of the place that the user is interested in",
 							"valueType": "placeName"
 						},
 						{
@@ -372,7 +372,7 @@
 							"examples": [
 								"Find me the cheapest seafood restaurant _near Bastille_"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the location in which a user is looking for a place.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the location in which a user is looking for a place.",
 							"valueType": "locationDescription"
 						},
 						{
@@ -382,7 +382,7 @@
 							"examples": [
 								"Find me a _seafood restaurant_ near Bastille"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the type of venue the user is looking for.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the type of venue the user is looking for.",
 							"valueType": "venueType"
 						},
 						{
@@ -392,7 +392,7 @@
 							"examples": [
 								"Find me a restaurant that serves _burgers_"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the specific item served or sold that the user is looking for.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the specific item served or sold that the user is looking for.",
 							"valueType": "specificItemSold"
 						},
 						{
@@ -458,7 +458,7 @@
 							"examples": [
 								"Find me the _5_ best Lebanese restaurants around"	
 							],
-							"questions_for_tagging": "Select the words, if any, that correspond to the number of places requested by the user.",
+							"questions_for_tagging": "Highlight the words, if any, that correspond to the number of places requested by the user.",
 							"valueType": "topN"
 						},
 						{
@@ -468,7 +468,7 @@
 							"examples": [
 								"Is there a place similar to Chez Jo near Bastille?"	
 							],
-							"questions_for_tagging": "Select the words, if any, that correspond to a place similar to the one that the user is looking for.",
+							"questions_for_tagging": "Highlight the words, if any, that correspond to a place similar to the one that the user is looking for.",
 							"valueType": "placeName"
 						}
 					]
@@ -490,7 +490,7 @@
 							"examples": [
 								"Get me a table at Le Gavroche for _4_"
 							],
-							"questions_for_tagging": "Select the words that correspond to the number of guests for whom the user would like to make a reservation.",
+							"questions_for_tagging": "Highlight the words that correspond to the number of guests for whom the user would like to make a reservation.",
 							"valueType": "partySize"
 						},
 						{
@@ -500,7 +500,7 @@
 							"examples": [
 								"Get me a table at _8PM_ at Le Gavroche"
 							],
-							"questions_for_tagging": "Select the words that correspond to the time and/or date at which the user is looking to make a reservation.",
+							"questions_for_tagging": "Highlight the words that correspond to the time and/or date at which the user is looking to make a reservation.",
 							"valueType": "datetimeDescription"
 						},
 						{
@@ -511,7 +511,7 @@
 								"Get me a table at 8PM at _Le Gavroche_.",
 								"Book me a table for 4 at a _Japanese restaurant_"
 							],
-							"questions_for_tagging": "Select the words that describe the restaurant that the user would like to book.",
+							"questions_for_tagging": "Highlight the words that describe the restaurant that the user would like to book.",
 							"valueType": "restaurantDescription"
 						},
 						{
@@ -521,7 +521,7 @@
 							"examples": [
 								"make a reservation for 2 at a Spanish restaurant _near Bastille_"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the location of the restaurant that the user would like to book.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the location of the restaurant that the user would like to book.",
 							"valueType": "locationDescription"
 						}
 					]
@@ -537,7 +537,7 @@
 							"examples": [
 								"book me an _Uber_ to Rand’s"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the service from which a user would like to request a trip.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the service from which a user would like to request a trip.",
 							"valueType": "rideOptionName"
 						},
 						{
@@ -547,7 +547,7 @@
 							"examples": [
 								"Can I get a taxi from _home_ to work?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the user's pickup location.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the user's pickup location.",
 							"valueType": "locationDescription"
 						},
 						{
@@ -557,7 +557,7 @@
 							"examples": [
 								"Can I get a taxi from home to _work_?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the user's destination",
+							"questions_for_tagging": "Highlight the words, if any, that describe the user's destination",
 							"valueType": "locationDescription"
 						},
 						{
@@ -567,7 +567,7 @@
 							"examples": [
 								"Get me an Uber home for _2_"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the number of passengers on the trip.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the number of passengers on the trip.",
 							"valueType": "partySize"
 						},
 						{
@@ -577,7 +577,7 @@
 							"examples": [
 								"Book me a cab for _tomorrow at 8_"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the time and/or date for which the user is looking to request a ride.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the time and/or date for which the user is looking to request a ride.",
 							"valueType": "datetimeDescription"
 						}
 					]
@@ -599,7 +599,7 @@
 							"examples": [
 								"How do I get from _work_ to République?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the origin of the trip.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the origin of the trip.",
 							"valueType": "locationDescription"
 						},
 						{
@@ -609,7 +609,7 @@
 							"examples": [
 								"Get me driving directions to _Le Gavroche_"
 							],
-							"questions_for_tagging": "Select the words that describe the destination of the trip.",
+							"questions_for_tagging": "Highlight the words that describe the destination of the trip.",
 							"valueType": "locationDescription"
 						},
 						{
@@ -619,7 +619,7 @@
 							"examples": [
 								"how do I go home by _bus_?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the transport mode that the user plans to use for their trip.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the transport mode that the user plans to use for their trip.",
 							"valueType": "transportMode"
 						},
 						{
@@ -629,7 +629,7 @@
 							"examples": [
 								"how do I get to Orly airport _tomorrow at 8pm_?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the time and/or date on which the user is looking to make their trip.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the time and/or date on which the user is looking to make their trip.",
 							"valueType": "datetimeDescription"
 						},
 						{
@@ -701,7 +701,7 @@
 							"examples": [
 								"send my ETA to _Charlotte_"
 							],
-							"questions_for_tagging": "Select the words that describe the person with whom the user would like to share their estimated time of arrival.",
+							"questions_for_tagging": "Highlight the words that describe the person with whom the user would like to share their estimated time of arrival.",
 							"valueType": "contactDescription"
 						}
 					]
@@ -717,7 +717,7 @@
 							"examples": [
 								"should I expect any delay on my way to _Snips_?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the destination of the trip that the user is enquiring about.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the destination of the trip that the user is enquiring about.",
 							"valueType": "locationDescription"
 						},
 						{
@@ -727,7 +727,7 @@
 							"examples": [
 								"should I expect any delay on my way from _home_ to Snips?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the origin of the trip that the user is enquiring about.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the origin of the trip that the user is enquiring about.",
 							"valueType": "locationDescription"
 						},
 						{
@@ -737,7 +737,7 @@
 							"examples": [
 								"What’s the traffic like on _Highway 66_?"
 							],
-							"questions_for_tagging": "Select the words, if any, that describe the specific way or area that the user is enquiring about.",
+							"questions_for_tagging": "Highlight the words, if any, that describe the specific way or area that the user is enquiring about.",
 							"valueType": "wayDescription"
 						}
 					]
@@ -759,7 +759,7 @@
 							"examples": [
 								"what’s the weather like _tomorrow_"
 							],
-							"questions_for_tagging": "Select the words, if any, that correspond to the beginning of the time period about which the user is enquiring.",
+							"questions_for_tagging": "Highlight the words, if any, that correspond to the beginning of the time period about which the user is enquiring.",
 							"valueType": "datetimeDescription"
 						},
 						{
@@ -769,7 +769,7 @@
 							"examples": [
 								"give me the weather forecast between Monday and _Thursday_"
 							],
-							"questions_for_tagging": "Select the words, if any, that correspond to the end of the time period about which the user is enquiring.",
+							"questions_for_tagging": "Highlight the words, if any, that correspond to the end of the time period about which the user is enquiring.",
 							"valueType": "datetimeDescription"
 						},
 						{
@@ -779,7 +779,7 @@
 							"examples": [
 								"how’s the weather in Rome _between Monday and Friday_"
 							],
-							"questions_for_tagging": "Select the words, if any, that correspond to the time period about which the user is enquiring.",
+							"questions_for_tagging": "Highlight the words, if any, that correspond to the time period about which the user is enquiring.",
 							"valueType": "locationDescription"
 						},
 						{
@@ -789,7 +789,7 @@
 							"examples": [
 								"how’s the weather in _Rome_"
 							],
-							"questions_for_tagging": "Select the words, if any, that correspond to the location about which the user is enquiring.",
+							"questions_for_tagging": "Highlight the words, if any, that correspond to the location about which the user is enquiring.",
 							"valueType": "locationDescription"
 						}
 					]
