@@ -502,6 +502,10 @@
 								{
 									"service":"api.ai",
 									"alias": "people"
+								},
+								{
+									"service":"recast.ai",
+									"alias": "number"
 								}
 							]
 						},
@@ -522,6 +526,10 @@
 								{
 									"service":"api.ai",
 									"alias": "date"
+								},
+								{
+									"service":"recast.ai",
+									"alias": "datetime"
 								}
 							]
 						},
@@ -559,6 +567,10 @@
 								{
 									"service":"api.ai",
 									"alias": "location"
+								},
+								{
+									"service":"recast.ai",
+									"alias": "location"
 								}
 							]
 						}
@@ -567,6 +579,11 @@
 						{
 							"service": "api.ai",
 							"alias": "book.restaurant"
+						},
+						{
+							"service": "recast.ai",
+							"alias": "book.book_restaurant_reservation_",
+							"bot":"04412285cae8f47b4e98ebcfa38d8390"
 						}
 					]
 				},
