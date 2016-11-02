@@ -17,6 +17,14 @@
 								{
 									"service":"api.ai",
 									"alias": "location"
+								},
+								{
+									"service":"api.ai",
+									"alias": "address"
+								},
+								{
+									"service":"api.ai",
+									"alias": "service_name"
 								}
 							]
 						}						
