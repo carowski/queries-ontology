@@ -10,6 +10,12 @@
 					"name": "GetCurrentLocation",
 					"examples": [
 						"what is this place?"
+					],
+					"competitionAliases": [
+						{
+							"service": "api.ai",
+							"alias": "maps.user"
+						}
 					]
 				},
 				{
@@ -491,7 +497,13 @@
 								"Get me a table at Le Gavroche for _4_"
 							],
 							"questions_for_tagging": "Highlight the words that correspond to the number of guests for whom the user would like to make a reservation.",
-							"valueType": "partySize"
+							"valueType": "partySize",
+							"competitionAliases": [
+								{
+									"service":"api.ai",
+									"alias": "people"
+								}
+							]
 						},
 						{
 							"type": "@slot",
@@ -501,7 +513,17 @@
 								"Get me a table at _8PM_ at Le Gavroche"
 							],
 							"questions_for_tagging": "Highlight the words that correspond to the time and/or date at which the user is looking to make a reservation.",
-							"valueType": "datetimeDescription"
+							"valueType": "datetimeDescription",
+							"competitionAliases": [
+								{
+									"service":"api.ai",
+									"alias": "time"
+								},
+								{
+									"service":"api.ai",
+									"alias": "date"
+								}
+							]
 						},
 						{
 							"type": "@slot",
@@ -512,7 +534,17 @@
 								"Book me a table for 4 at a _Japanese restaurant_"
 							],
 							"questions_for_tagging": "Highlight the words that describe the restaurant that the user would like to book.",
-							"valueType": "restaurantDescription"
+							"valueType": "restaurantDescription",
+							"competitionAliases": [
+								{
+									"service":"api.ai",
+									"alias": "venue_title"
+								},
+								{
+									"service":"api.ai",
+									"alias": "cuisine"
+								}
+							]
 						},
 						{
 							"type": "@slot",
@@ -522,7 +554,19 @@
 								"make a reservation for 2 at a Spanish restaurant _near Bastille_"
 							],
 							"questions_for_tagging": "Highlight the words, if any, that describe the location of the restaurant that the user would like to book.",
-							"valueType": "locationDescription"
+							"valueType": "locationDescription",
+							"competitionAliases": [
+								{
+									"service":"api.ai",
+									"alias": "location"
+								}
+							]
+						}
+					],
+					"competitionAliases": [
+						{
+							"service": "api.ai",
+							"alias": "book.restaurant"
 						}
 					]
 				},
