@@ -11,25 +11,7 @@
 					"examples": [
 						"what is this place?"
 					],
-					"slots": [
-						{
-							"competition": [
-								{
-									"service":"api.ai",
-									"alias": "location"
-								},
-								{
-									"service":"api.ai",
-									"alias": "address"
-								},
-								{
-									"service":"api.ai",
-									"alias": "service_name"
-								}
-							]
-						}						
-					]
-					"competition": [
+					"competitionAliases": [
 						{
 							"service": "api.ai",
 							"alias": "maps.user"
@@ -516,7 +498,7 @@
 							],
 							"questions_for_tagging": "Highlight the words that correspond to the number of guests for whom the user would like to make a reservation.",
 							"valueType": "partySize",
-							"competition": [
+							"competitionAliases": [
 								{
 									"service":"api.ai",
 									"alias": "people"
@@ -532,7 +514,7 @@
 							],
 							"questions_for_tagging": "Highlight the words that correspond to the time and/or date at which the user is looking to make a reservation.",
 							"valueType": "datetimeDescription",
-							"competition": [
+							"competitionAliases": [
 								{
 									"service":"api.ai",
 									"alias": "time"
@@ -553,7 +535,7 @@
 							],
 							"questions_for_tagging": "Highlight the words that describe the restaurant that the user would like to book.",
 							"valueType": "restaurantDescription",
-							"competition": [
+							"competitionAliases": [
 								{
 									"service":"api.ai",
 									"alias": "venue_title"
@@ -573,7 +555,7 @@
 							],
 							"questions_for_tagging": "Highlight the words, if any, that describe the location of the restaurant that the user would like to book.",
 							"valueType": "locationDescription",
-							"competition": [
+							"competitionAliases": [
 								{
 									"service":"api.ai",
 									"alias": "location"
@@ -581,7 +563,7 @@
 							]
 						}
 					],
-					"competition": [
+					"competitionAliases": [
 						{
 							"service": "api.ai",
 							"alias": "book.restaurant"
